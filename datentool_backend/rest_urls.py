@@ -5,7 +5,6 @@ from datentool_backend.site.views import (SiteSettingViewSet,
                                           BaseDataSettingViewSet)
 #  vector tiles
 from rest_framework_mvt.views import mvt_view_factory
-from django.conf.urls import url
 
 from .population.models import RasterCell
 from .area.views import (LayerGroupViewSet,
