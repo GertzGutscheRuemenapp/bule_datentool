@@ -56,6 +56,8 @@ urlpatterns = [
     # handle the routing, /api and /static routes are still handled by django
     # automatically, for some reason /media is not, so it is excluded here
     url('^(?!media).*', HomePageView.as_view(), name='home'),
+
+    path('__debug__/', include('debug_toolbar.urls')),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

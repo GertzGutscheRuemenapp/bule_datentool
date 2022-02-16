@@ -53,7 +53,8 @@ INSTALLED_APPS = [
     'drf_spectacular',
     'django_cleanup.apps.CleanupConfig',
     'bulkmodel',
-    'django_filters'
+    'django_filters',
+    'debug_toolbar',
 ]
 
 MIDDLEWARE = [
@@ -64,6 +65,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 REST_FRAMEWORK = {
@@ -274,3 +276,7 @@ def load_stats_json():
         return chunk_paths
 
 ANGULAR_RESOURCES = load_stats_json() or {}
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+]
